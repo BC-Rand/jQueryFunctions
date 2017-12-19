@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery Functions</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#clickbuttonhide').click(function(){
+				$('#clicktext').hide();
+			})
+			$('#clickbuttonshow').click(function(){
+				$('#clicktext').show();
+			})
+			$('#togglebutton').click(function(){
+				$('#toggletext').toggle();
+			})
+
+			
+			$('#slidedownbutton').click(function(){
+				$('#slidetext').slideDown();
+			})
+
+			$('#slideupbutton').click(function(){
+				$('#slidetext').slideUp();
+			})
+
+			$('#slidetogglebutton').click(function(){
+				$('#slidetoggletext').slideToggle();
+			})
+			$('#fadeoutbutton').click(function(){
+				$('#fadetext').fadeOut();
+			})
+			$('#fadeinbutton').click(function(){
+				$('#fadetext').fadeIn();
+			})
+			$('#addclassbutton').click(function(){
+				$('#addclasstext').addClass("red")
+			})
+			$('#beforebutton').click(function(){
+				$('#beforetext').before("<p>test</p>")
+			})
+			$('#appendbutton').click(function(){
+				$('#appendtext').append(" Here is some more text!")
+			})
+			$('#htmlbutton').click(function(){
+				$('#htmltext').html("<span class='red'>Red and <b>bold</b></span>")
+			})
+			$('#attrbutton').click(function(){
+				var attrtextId = $('#attrtext').attr("class");
+				$('#attrtext').text(attrtextId);
+			})
+			$('#valbutton').click(function(){
+				$('#valtext').text($('#valselect').val())
+			})
+			$('#dataretrieve').click(function(){
+				var value = $('#datademobox').data("Burger");
+				$('#datadisplay').text("" + value);
+			})
+			$('#datasetyes').click(function(){
+				$('#datademobox').data("Burger", "Yes");
+				$('#datadisplay').text("#datademobox 'Burger' is set to Yes");
+
+			})
+			$('#datasetmaybe').click(function(){
+				$('#datademobox').data("Burger", "Maybe");
+				$('#datadisplay').text("#datademobox 'Burger' is set to Maybe");
+			})
+			$('#dataclear').click(function(){
+				$('#datademobox').removeData("Burger");
+				$('#datadisplay').text("#datademobox 'Burger' is set to undefined");
+			})
+		});
+	</script>
+</head>
+<body>
+	<div id="wrapper">
+		<div class="demobox" id="topdemobox">
+			<h4>.click, .hide, and .show</h4>
+			<button id="clickbuttonhide">.click</button>
+			<p id="clicktext">When you click the button, this text will become hidden.</p>
+			<br>
+			<button id="clickbuttonshow">.show</button>
+		</div>
+		<div class="demobox">
+			<h4> .toggle</h4>
+			<button id="togglebutton">.toggle</button>
+			<p id="toggletext">When you click the button, this text will toggle from hidden to visible</p>	
+		</div>
+		<div class="demobox">
+			<h4>.slideDown and .slideUp</h4>
+			<div id="slidebuttondiv">
+				<button id="slidedownbutton">.slideDown</button>
+				<br>
+				<button id="slideupbutton">.slideUp</button>
+			</div>
+			<div id="slidetextdiv">
+				<p id="slidetext">This text will slide up to a hidden position when the .slideUp button is pressed and move down from the hidden position when .slideDown is pressed.</p>
+			</div>
+		</div>
+		<div class="demobox">
+			<h4>.slideToggle</h4>
+			<button id="slidetogglebutton">.slideToggle</button>
+			<p id="slidetoggletext">This text will appear aor disappear with a sliding animation when the button is pressed.</p>
+		</div>
+		<div class="demobox">
+			<h4>Fade in and Fade out</h4>
+			<button id="fadeoutbutton">.fadeOut</button>
+			<p id="fadetext">When you click the button, this text will fade out or in.</p>
+			<br>
+			<button id="fadeinbutton">.fadeIn</button> 
+		</div>
+		<div class="demobox">
+			<h4>.addClass</h4>
+			<button id="addclassbutton">.addClass</button>
+			<p id="addclasstext">This text will gain the 'red' class when the button is pressed, applying the .red CSS styling</p>
+		</div>
+		<div class="demobox"> 
+			<h4>.before</h4>
+			<button id="beforebutton">.before</button>
+			<p id="beforetext">Text will be inserted before this paragraph when the button is pressed.</p>
+		</div>
+		<div class="demobox">
+			<h4>.append</h4>
+			<button id="appendbutton">.append</button>
+			<p id="appendtext">When the button is pressed, additional text will be added to the end of this p tag.</p>
+		</div>
+		<div class="demobox">
+			<h4>.html</h4>
+			<button id="htmlbutton">.html</button>
+			<p id="htmltext">When the button is pressed this text will be replaced in the HTML code with new content.</p>
+		</div>
+		<div class="demobox">
+			<h4>.attr</h4>
+			<button id="attrbutton">.attr</button>
+			<p id="attrtext" class="fakeclass1 fakeclass2">When the button is pressed it will add text of the classes of this p tag</p>
+		</div>
+		<div class="demobox">
+			<h4>.val</h4>
+			<button id="valbutton">.val</button>
+			<p>The lower text will display the value of the selector under the button</p>
+			<br>
+			<select id="valselect">
+				<option>One</option>
+				<option>Another</option>
+				<option>Final</option>
+			</select>
+			<p id="valtext"></p>
+		</div>
+		<div class="demobox" id="datademobox">
+			<h4>.data</h4>
+			<div id="databuttondiv">
+				<button id="dataretrieve">.data Retrieve</button>
+				<button id="datasetyes">.data Set Yes</button>
+				<button id="datasetmaybe">.data Set Maybe</button>
+				<button id="dataclear">.data Clear</button>
+			</div>
+			<div id="datatextdiv">
+				<p>When .data Retrieve is pressed, the "Data" value from the #datatextdiv will be displayed. .data Set Yes and .data Set Maybe will set the "Data" value in #datatextdiv to Yes and Maybe respectively. .data Clear will clear the "Data" value.</p>
+				<br>
+				<br>
+				<p id="datadisplay"></p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

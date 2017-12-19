@@ -1,0 +1,65 @@
+* {
+	margin:0;
+	padding:0;
+}
+
+.demobox {
+	padding-bottom:15px;
+	border-bottom: 1px solid black;
+	border-left:1px solid black;
+	border-right:1px solid black;
+}
+#topdemobox {
+	border-top:1px solid black;
+}
+#slidebuttondiv {
+	height:60px;
+	width:86px;
+	display:inline-block;
+	vertical-align: top;
+}
+#slidetextdiv {
+	display:inline-block;
+	margin-left:25px;
+	width:800px;
+	height:35px;
+}
+#slidetext {
+	margin-left:0;
+	vertical-align: top;
+	display:inline;
+}
+h4 {
+	margin-left:50px;
+	padding:20px;
+}
+button {
+	margin-left:15px;
+}
+p {
+	display:inline-block;
+	margin-left:50px;
+}
+.red {
+	color:red;
+}
+.blue {
+	color:blue;
+}
+#valselect {
+	margin-left:8px;
+}
+#databuttondiv {
+	display:inline-block;
+	width:125px;
+	height:80px;
+}
+#datatextdiv {
+	vertical-align: top;
+	height:80px;
+	width:800px;
+	display:inline-block;
+}
+#datatextdiv p {
+	margin-left:10px;
+}
